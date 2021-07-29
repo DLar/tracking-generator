@@ -38,12 +38,12 @@ $(document).ready(() => {
     $('#group3, #campaigns').selectize({ maxItems: 2 });
     $('#vendors, #categories').selectize({ maxItems: 4 });
     $('#date').datepicker({ autoclose: true, todayHighlight: true, orientation: "bottom" });
-    $('#code').focus(function() {$(this).select();});
+    $('#code').click(function() {$(this).select();});
     $('#copy').click(function() {
         $('#code').select();
         document.execCommand("copy");
         setTimeout(function() {$('#copy').tooltip("hide");}, 500);
-    }).tooltip({ placement: "left", trigger: "click", title: "Copied!" });
+    }).tooltip({ placement: "bottom", trigger: "click", title: "Copied!" });
 });
 
 function getUrlParameter(sParam) {

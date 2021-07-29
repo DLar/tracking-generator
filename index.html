@@ -2,22 +2,23 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tracking Generator</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/selectize.bootstrap4.css">
 <link rel="stylesheet" href="css/bootstrap-datepicker3.min.css">
 </head>
 <body>
-	<div class="container-fluid">
-		<div class="input-group">
+	<div class="container">
+		<h1 class="my-3">Tracking Generator</h1>
+		<div class="input-group my-4">
 			<span class="input-group-text">ecid=</span>
 			<input class="form-control" id="code" type="text" readonly style="background-color: white;">
 			<button class="btn btn-secondary" id="copy" type="button">Copy</button>
 		</div>
-		<div class="row">
-			<div class="col">
-				<label class="form-label" for="group1">Brand & Channel:</label>
+		<div class="row gy-3">
+			<div class="col-12 col-md-6">
+				<label class="form-label" for="group1">Brand & Channel (1<sup>st</sup> Grouping):</label>
 				<select class="form-control" id="group1">
 					<optgroup label="Neiman Marcus">
 						<option value="NMAF">Affiliate (NM)</option>
@@ -56,8 +57,8 @@
 					</optgroup>
 				</select>
 			</div>
-			<div class="col">
-				<label class="form-label" for="group2">2nd Grouping:</label>
+			<div class="col-12 col-md-6">
+				<label class="form-label" for="group2">2<sup>nd</sup> Grouping:</label>
 				<select class="form-control" id="group2">
 					<optgroup label="Affiliate">
 						<option value="BE">Browser Extension</option>
@@ -128,10 +129,8 @@
 					</optgroup>
 				</select>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col">
-				<label class="form-label" for="group3">3rd Grouping (2 max):</label>
+			<div class="col-12 col-md-6">
+				<label class="form-label" for="group3">3<sup>rd</sup> Grouping (2 max):</label>
 				<select class="form-control" id="group3" multiple>
 					<optgroup label="App">
 						<option value="S1">Slider 1</option>
@@ -225,7 +224,7 @@
 					</optgroup>
 				</select>
 			</div>
-			<div class="col">
+			<div class="col-12 col-md-6">
 				<label class="form-label" for="campaigns">Campaign Types (2 max):</label>
 				<select class="form-control" id="campaigns" multiple>
 					<optgroup label="Editorial">
@@ -253,9 +252,7 @@
 					</optgroup>
 				</select>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col">
+			<div class="col-12 col-md-6">
 				<label class="form-label" for="vendors">Vendors (4 max):</label>
 				<select class="form-control" id="vendors" multiple>
 					<option value="SKIN">111Skin</option>
@@ -525,7 +522,7 @@
 					<option value="ZIMM">ZIMMERMAN</option>
 				</select>
 			</div>
-			<div class="col">
+			<div class="col-12 col-md-6">
 				<label class="form-label" for="categories">Categories (4 max):</label>
 				<select class="form-control" id="categories" multiple>
 					<option value="AC">Accessories</option>
@@ -578,13 +575,11 @@
 					<option value="PD">Premier Designer</option>
 				</select>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col">
+			<div class="col-12 col-md-6">
 				<label class="form-label" for="name">Campaign Name:</label>
 				<input class="form-control" id="name" type="text" autocomplete="off">
 			</div>
-			<div class="col">
+			<div class="col-12 col-md-6">
 				<label class="form-label" for="date">Campaign Date:</label>
 				<input class="form-control" id="date" type="text" autocomplete="off">
 			</div>
