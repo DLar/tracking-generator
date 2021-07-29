@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Tracking Generator</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/selectize.bootstrap4.css">
+<link rel="stylesheet" href="css/bootstrap-datepicker3.min.css">
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="input-group">
+			<span class="input-group-text">ecid=</span>
+			<input class="form-control" id="code" type="text" readonly style="background-color: white;">
+			<button class="btn btn-secondary" id="copy" type="button">Copy</button>
+		</div>
+		<div class="row">
+			<div class="col">
+				<label class="form-label" for="group1">Brand & Channel:</label>
+				<select class="form-control" id="group1">
+					<optgroup label="Neiman Marcus">
+						<option value="NMAF">Affiliate (NM)</option>
+						<option value="NMAP">App (NM)</option>
+						<option value="NMBM">Brand Media (NM)</option>
+						<option value="NMCS">CSE (NM)</option>
+						<option value="NMDN">Display Non Remarketing (NM)</option>
+						<option value="NMDR">Display Remarketing (NM)</option>
+						<option value="NMEM">Email (NM)</option>
+						<option value="NMOS">Organic Social (NM)</option>
+						<option value="NMPN">Paid Non TM (NM)</option>
+						<option value="NMPT">Paid TM (NM)</option>
+						<option value="NMZO">Performance Social (NM)</option>
+						<option value="NMWS">Website (NM)</option>
+						<option value="NMRN" disabled>Partnership (NM)</option>
+						<option value="NMCO" disabled>Connect (NM)</option>
+					</optgroup>
+					<optgroup label="Bergdorf Goodman">
+						<option value="BGAF">Affiliate (BG)</option>
+						<option value="BGAP">App (BG)</option>
+						<option value="BGEM">Email (BG)</option>
+						<option value="BGWS">Website (BG)</option>
+						<option value="BGCO" disabled>Connect (BG)</option>
+					</optgroup>
+					<optgroup label="Horchow">
+						<option value="HCAF">Affiliate (HC)</option>
+						<option value="HCEM">Email (HC)</option>
+						<option value="HCWS">Website (HC)</option>
+					</optgroup>
+					<optgroup label="InCircle">
+						<option value="INEM">Email (IN)</option>
+						<option value="INWS" disabled>Website (IN)</option>
+					</optgroup>
+					<optgroup label="Last Call">
+						<option value="LCEM">Email (LC)</option>
+					</optgroup>
+				</select>
+			</div>
+			<div class="col">
+				<label class="form-label" for="group2">2nd Grouping:</label>
+				<select class="form-control" id="group2">
+					<optgroup label="Affiliate">
+						<option value="BE">Browser Extension</option>
+						<option value="CB">Cashback</option>
+						<option value="CH">Charity</option>
+						<option value="CP">Comparison Shopping</option>
+						<option value="CS">Content Site</option>
+						<option value="CD">Coupon/Deal</option>
+						<option value="IB">Influencer/Blogger</option>
+						<option value="PY">Personal Styling</option>
+						<option value="PM">Points/Miles/Loyalty</option>
+						<option value="RM">Referral/Mall</option>
+						<option value="SN">SubNetwork</option>
+					</optgroup>
+					<optgroup label="App">
+						<option value="NT">Notification</option>
+					</optgroup>
+					<optgroup label="Brand Media">
+						<option value="OV">Online Video</option>
+						<option value="CV">ConnectedTV</option>
+						<option value="OH">Out of Home</option>
+						<option value="LV">LinearTV</option>
+						<option value="DB">Display Banners</option>
+						<option value="PD">Programatic Display</option>
+						<option value="PR">Print</option>
+						<option value="SI">Social Influencer</option>
+						<option value="SE">Paid Social Engagement</option>
+						<option value="PS">Paid Social Traffic</option>
+						<option value="BC">Branded Content</option>
+					</optgroup>
+					<optgroup label="CSE">
+						<option value="GL">Google LIA</option>
+						<option value="GP">Google PLA</option>
+						<option value="BP">Bing PLA</option>
+					</optgroup>
+					<optgroup label="Display Remarketing">
+						<option value="DD">Dynamic Display</option>
+						<option value="DP">Paid Social DPA</option>
+					</optgroup>
+					<optgroup label="Email">
+						<option value="HD">Header</option>
+						<option value="AX">Top Block</option>
+						<option value="BX">Primary Block</option>
+						<option value="CX">Supporting Block</option>
+						<option value="FT">Footer</option>
+					</optgroup>
+					<optgroup label="Performance Social">
+						<option value="DA">Paid Social DBA</option>
+					</optgroup>
+					<optgroup label="Website">
+						<option value="HP">Homepage</option>
+						<option value="ST">Header Promo</option>
+						<option value="DR">Drawer</option>
+						<option value="DI">Designer Index</option>
+						<option value="SH">Silo Header</option>
+						<option value="SM">Silo</option>
+						<option value="BT">Boutique Page</option>
+						<option value="LP">Landing Page</option>
+						<option value="LB">Lookbook</option>
+						<option value="MG">Magazine</option>
+						<option value="GH">Graphic Header</option>
+						<option value="PT">Promo Tile</option>
+						<option value="SR">Search Banner</option>
+						<option value="PB">PDP Banner</option>
+						<option value="SO">Store Banner</option>
+						<option value="CO">Checkout</option>
+						<option value="VN">Visual Nav</option>
+					</optgroup>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<label class="form-label" for="group3">3rd Grouping (2 max):</label>
+				<select class="form-control" id="group3" multiple>
+					<optgroup label="App">
+						<option value="S1">Slider 1</option>
+						<option value="S2">Slider 2</option>
+						<option value="S3">Slider 3</option>
+						<option value="E1">Explore 1</option>
+						<option value="E2">Explore 2</option>
+						<option value="E3">Explore 3</option>
+						<option value="E4">Explore 4</option>
+					</optgroup>
+					<optgroup label="Brand Media">
+						<option value="FB">Facebook</option>
+						<option value="IG">Instagram</option>
+						<option value="YT">YouTube</option>
+						<option value="TW">Twitter</option>
+						<option value="SS">Samsung</option>
+						<option value="CN">CondeNast</option>
+						<option value="VG">ViralGains</option>
+						<option value="AT">Adtheorent</option>
+						<option value="IH">InsideHook</option>
+						<option value="DV">DV360</option>
+						<option value="NA">Nativo</option>
+						<option value="PI">Pinterest</option>
+						<option value="HR">Hearst</option>
+					</optgroup>
+					<optgroup label="Email">
+						<option value="01">SIP I</option>
+						<option value="02">SIP II</option>
+						<option value="03">SIP III</option>
+						<option value="04">SIP IV</option>
+						<option value="05">SIP V</option>
+						<option value="06">SIP VI</option>
+						<option value="07">SIP VII</option>
+						<option value="08">SIP VIII</option>
+						<option value="09">SIP IX</option>
+						<option value="10">SIP X</option>
+						<option value="11">SIP XI</option>
+						<option value="12">SIP XII</option>
+						<option value="13">SIP XIII</option>
+						<option value="14">SIP XIV</option>
+						<option value="15">SIP XV</option>
+						<option value="V1">Version 1</option>
+						<option value="V2">Version 2</option>
+					</optgroup>
+					<optgroup label="Homepage">
+						<option value="B1">Banner 1</option>
+						<option value="B2">Banner 2</option>
+						<option value="B3">Banner 3</option>
+						<option value="1A">Row 1a</option>
+						<option value="1B">Row 1b</option>
+						<option value="1C">Row 1c</option>
+						<option value="2A">Row 2a</option>
+						<option value="2B">Row 2b</option>
+						<option value="2C">Row 2c</option>
+						<option value="4A">Row 4a</option>
+						<option value="4B">Row 4b</option>
+						<option value="4C">Row 4c</option>
+						<option value="5A">Row 5a</option>
+						<option value="5B">Row 5b</option>
+						<option value="5C">Row 5c</option>
+						<option value="6A">Row 6a</option>
+						<option value="6B">Row 6b</option>
+						<option value="6C">Row 6c</option>
+						<option value="7A">Row 7a</option>
+						<option value="7B">Row 7b</option>
+						<option value="7C">Row 7c</option>
+						<option value="R1">Row 1</option>
+						<option value="R2">Row 2</option>
+						<option value="R3">Row 3</option>
+						<option value="R4">Row 4</option>
+						<option value="R5">Row 5</option>
+						<option value="R6">Row 6</option>
+						<option value="R7">Row 7</option>
+						<option value="R8">Row 8</option>
+						<option value="R9">Row 9</option>
+						<option value="T1">Button 1</option>
+						<option value="T2">Button 2</option>
+						<option value="T3">Button 3</option>
+						<option value="T4">Button 4</option>
+					</optgroup>
+					<optgroup label="Social">
+						<option value="RH">RTB House</option>
+						<option value="3I">360i</option>
+						<option value="FE">Feed</option>
+						<option value="ST">Story</option>
+					</optgroup>
+					<optgroup label="Other">
+						<option value="EX">Extended</option>
+						<option value="FD">Final Day</option>
+						<option value="FH">Final Hours</option>
+					</optgroup>
+				</select>
+			</div>
+			<div class="col">
+				<label class="form-label" for="campaigns">Campaign Types (2 max):</label>
+				<select class="form-control" id="campaigns" multiple>
+					<optgroup label="Editorial">
+						<option value="FA">Fall</option>
+						<option value="HO">Holiday</option>
+						<option value="RS">Resort</option>
+						<option value="PH">Post-Holiday</option>
+						<option value="SP">Spring</option>
+						<option value="SU">Summer</option>
+						<option value="PF">Pre-Fall</option>
+					</optgroup>
+					<optgroup label="Promotional">
+						<option value="DO">Dollar Off ($Off)</option>
+						<option value="GC">Gift Card (TGC)</option>
+						<option value="GW">Gift with Purchase (GWP)</option>
+						<option value="SL">Hardmark (HM)</option>
+						<option value="PO">Percent Off Sale (POS)</option>
+						<option value="BP">Bonus Points (BP)</option>
+					</optgroup>
+					<optgroup label="Other">
+						<option value="OO">Co-Op</option>
+						<option value="EG">Evergreen</option>
+						<option value="TS">Transactional</option>
+						<option value="ET">Event Triggered</option>
+					</optgroup>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<label class="form-label" for="vendors">Vendors (4 max):</label>
+				<select class="form-control" id="vendors" multiple>
+					<option value="SKIN">111Skin</option>
+					<option value="7FAM">7 for all Mankind</option>
+					<option value="XALC">ALC</option>
+					<option value="ACDP">Acqua di Parma</option>
+					<option value="ADLP">Adam Lippes</option>
+					<option value="ADST">Adidas x Stella</option>
+					<option value="AERN">AERIN</option>
+					<option value="AGNA">Agnona</option>
+					<option value="AKLA">Akola</option>
+					<option value="AKRS">Akris</option>
+					<option value="AKPU">Akris Punto</option>
+					<option value="ALAI">Alaia</option>
+					<option value="MCQN">Alexander McQueen</option>
+					<option value="ALXS">Alexis</option>
+					<option value="ALOV">Alice + Olivia</option>
+					<option value="AMAU">Amina Muaddi</option>
+					<option value="ANGN">Andrew Gn</option>
+					<option value="ANKO">Anita Ko</option>
+					<option value="ARMT">Armenta</option>
+					<option value="ARMA">Aromatherapy</option>
+					<option value="AUBA">Augustinus Bader</option>
+					<option value="ARUM">Aurum</option>
+					<option value="BABR">BABOR</option>
+					<option value="BCRT">Baccarat</option>
+					<option value="BGMK">Badgley Mischka</option>
+					<option value="BLCG">Balenciaga</option>
+					<option value="BALL">Bally</option>
+					<option value="BLMN">Balmain</option>
+					<option value="BBIO">BeautyBio</option>
+					<option value="BEBO">Beboe</option>
+					<option value="BEGO">BeeGoddess</option>
+					<option value="BETU">Bella Tu</option>
+					<option value="BERN">Bernhardt</option>
+					<option value="BEYO">Beyond Yoga</option>
+					<option value="BBRN">Bobbi Brown</option>
+					<option value="BTGA">Bottega Veneta</option>
+					<option value="BRCO">BROCK COLLECTION</option>
+					<option value="BRCU">Brunello Cucinelli</option>
+					<option value="BRBY">Burberry</option>
+					<option value="BRNY">Burnett New York</option>
+					<option value="BVLG">BVLGARI</option>
+					<option value="BYFA">BY FAR</option>
+					<option value="CMLA">Camilla</option>
+					<option value="CNGS">Canada Goose</option>
+					<option value="CNLI">Canali</option>
+					<option value="CANN">Cannuka</option>
+					<option value="CRHR">Carolina Herrera</option>
+					<option value="ROSE">Caroline Rose</option>
+					<option value="CATR">Cartier</option>
+					<option value="CHNL">Chanel</option>
+					<option value="CHTC">Chantecaille</option>
+					<option value="CHLO">Chloe</option>
+					<option value="CHPD">Chopard</option>
+					<option value="LBTN">Christian Louboutin</option>
+					<option value="CINQ">Cinq a Sept</option>
+					<option value="PEAU">Cle De Peau</option>
+					<option value="CLCH">Clive Christian</option>
+					<option value="COAC">Coach</option>
+					<option value="CORA">Coravin</option>
+					<option value="CREE">Creed</option>
+					<option value="CRWN">Crowne & Caliber</option>
+					<option value="GAIA">Cult Gaia</option>
+					<option value="DYUR">David Yurman</option>
+					<option value="DLAM">Derek Lam 10 Crosby</option>
+					<option value="DERM">DermaFlash</option>
+					<option value="DVFB">Diane Von Furstenberg</option>
+					<option value="DIOR">Dior</option>
+					<option value="DPTQ">Diptyque</option>
+					<option value="DCGB">Dolce & Gabbana</option>
+					<option value="DPHU">dpHUE</option>
+					<option value="DRBS">Dr Barbara Sturm</option>
+					<option value="DYSN">Dyson</option>
+					<option value="EBJY">Eberjay</option>
+					<option value="ELFH">Eileen Fisher</option>
+					<option value="ELKE">Elizabeth Locke</option>
+					<option value="ELLE">Elle Decor</option>
+					<option value="EMAR">Emporio Armani</option>
+					<option value="EQPT">EQUIPMENT</option>
+					<option value="ZEGN">Ermenegildo Zegna</option>
+					<option value="ESCA">Escada</option>
+					<option value="ESKA">Eskandar</option>
+					<option value="ESLD">Estee Lauder</option>
+					<option value="ETHO">Etho Maria</option>
+					<option value="ETRO">Etro</option>
+					<option value="FMRO">Farm Rio</option>
+					<option value="FDAM">FEED AMERICA</option>
+					<option value="FEND">Fendi</option>
+					<option value="FIGU">Figue</option>
+					<option value="FINL">Finley</option>
+					<option value="FRME">FRAME</option>
+					<option value="FUSK">Furtuna Skin</option>
+					<option value="GBHE">GABRIELA HEARST</option>
+					<option value="GBVA">Giambattista Valli</option>
+					<option value="GIAN">Gianvito Rossi</option>
+					<option value="GGAR">Giorgio Armani</option>
+					<option value="GPZA">Giuseppe Zanotti</option>
+					<option value="GIVE">Givenchy</option>
+					<option value="GOLD">Golden Goose</option>
+					<option value="GSKI">Gorski</option>
+					<option value="GUCC">Gucci</option>
+					<option value="GULN">Guerlain</option>
+					<option value="HALS">Halston</option>
+					<option value="HNBN">Hannah Banana</option>
+					<option value="HANR">Hanro</option>
+					<option value="HAUT">Haute House</option>
+					<option value="HRMS">Hermes</option>
+					<option value="HRNO">Herno</option>
+					<option value="HOUR">Hourglass</option>
+					<option value="HUGO">HUGO BOSS</option>
+					<option value="INDL">Indie Lee</option>
+					<option value="IPPO">Ippolita</option>
+					<option value="JBRD">J Brand</option>
+					<option value="JBRB">Jan Barboglio</option>
+					<option value="JLSD">Jil Sander</option>
+					<option value="CHOO">Jimmy Choo</option>
+					<option value="JMAL">Jo Malone</option>
+					<option value="VASS">Joan Vass</option>
+					<option value="JOOR">Johanna Ortiz</option>
+					<option value="JNHD">John Hardy</option>
+					<option value="JOHN">John Richard Collection</option>
+					<option value="JWAS">Johnny Was</option>
+					<option value="ADLR">Jonathan Adler</option>
+					<option value="JOMA">Jose & Maria</option>
+					<option value="JDLB">Judith Leiber</option>
+					<option value="JSKA">Juliska</option>
+					<option value="JBQU">Just Bee Queen</option>
+					<option value="JWAN">JW Anderson</option>
+					<option value="KTSP">Kate Spade</option>
+					<option value="KHLS">Kiehl's</option>
+					<option value="KNSK">Knesko</option>
+					<option value="KOHA">Kobi Halperin</option>
+					<option value="KOST">Konstantino</option>
+					<option value="LGNC">L'AGENCE</option>
+					<option value="LMER">La Mer</option>
+					<option value="LAPE">LA PERLA</option>
+					<option value="LAPR">La Petite Robe</option>
+					<option value="PRIE">La Prairie</option>
+					<option value="LAFA">Lafayette 148</option>
+					<option value="LAGO">Lagos</option>
+					<option value="LANA">Lana</option>
+					<option value="LNCR">Lancer</option>
+					<option value="LANC">Lancome</option>
+					<option value="LAMC">Laura Mercier</option>
+					<option value="LELA">Lela Rose</option>
+					<option value="TODD">Lisa Todd</option>
+					<option value="LISE">Lise Chamel</option>
+					<option value="LOEW">Loewe</option>
+					<option value="LORO">Loro Piana</option>
+					<option value="MCKG">Mackage</option>
+					<option value="MKCD">MacKenzie Childs</option>
+					<option value="MFKU">Maison Francis Kurkdjian</option>
+					<option value="MJTC">Majestic Filatures</option>
+					<option value="MNBK">Manolo Blahnik</option>
+					<option value="MHOF">Mara Hoffman</option>
+					<option value="MCJB">MARC JACOBS</option>
+					<option value="MARN">Marchesa Notte</option>
+					<option value="MARC">Marco Bicego</option>
+					<option value="MATK">Matouk</option>
+					<option value="MAXM">Max Mara</option>
+					<option value="MCOR">Maygel Coronel</option>
+					<option value="XMCM">MCM</option>
+					<option value="MEDA">Medea</option>
+					<option value="MEMR">Memoire</option>
+					<option value="ARAM">Michael Aram</option>
+					<option value="KORS">Michael Kors</option>
+					<option value="MSOK">Misook</option>
+					<option value="MLBN">Molton Brown</option>
+					<option value="MNCL">Moncler</option>
+					<option value="MOLH">Monique Lhuillier</option>
+					<option value="MNRW">Monrow</option>
+					<option value="MOKN">Moose Knuckles</option>
+					<option value="MTHR">MOTHER</option>
+					<option value="NKHN">Naeem Kahn</option>
+					<option value="NNSK">Nanushka</option>
+					<option value="NATR">Natori</option>
+					<option value="NTBS">Natura Bisse</option>
+					<option value="NCZO">Nic+Zoe</option>
+					<option value="NKKS">Niko Koulis</option>
+					<option value="NUFA">Nuface</option>
+					<option value="OFFW">Off White</option>
+					<option value="OMOR">Omorovicza</option>
+					<option value="ONZI">Onzie</option>
+					<option value="ORBE">Oribe</option>
+					<option value="ODLR">Oscar de la Renta</option>
+					<option value="OVAD">Ovadia</option>
+					<option value="PAIG">Paige</option>
+					<option value="PAUL">Paul Stuart</option>
+					<option value="PDGR">PEDRO GARCIA</option>
+					<option value="PTPL">Petite Plume</option>
+					<option value="PHPR">Phaidon Press</option>
+					<option value="PIAG">Piagnet</option>
+					<option value="PJSV">PJ Salvage</option>
+					<option value="PQSM">PQ Swim</option>
+					<option value="PRAD">Prada</option>
+					<option value="PRSC">Proenza Schouler</option>
+					<option value="PRPS">PRPS</option>
+					<option value="XRCO">R+Co</option>
+					<option value="RGBN">Rag & Bone</option>
+					<option value="RAIL">Rails</option>
+					<option value="RHLN">Ralph Lauren</option>
+					<option value="RMBR">Ramy Brooke</option>
+					<option value="REFA">ReFa</option>
+					<option value="RNCV">Rene Caovilla</option>
+					<option value="RETR">Retrofete</option>
+					<option value="REVI">ReVive</option>
+					<option value="RFTJ">Rick Freeman for Teri Jon</option>
+					<option value="RBGH">ROBERT GRAHAM</option>
+					<option value="COIN">Roberto Coin</option>
+					<option value="RGVI">Roger Vivier</option>
+					<option value="RLMR">Roland Mouret</option>
+					<option value="RSGT">Rosetta Getty</option>
+					<option value="STLR">Saint Laurent</option>
+					<option value="SALP">Sally LaPointe</option>
+					<option value="FERR">Salvatore Ferragamo</option>
+					<option value="SODA">SCOTCH & SODA</option>
+					<option value="SNRV">Senreve</option>
+					<option value="SFER">Sferra</option>
+					<option value="SHLW">Sheryl Lowe</option>
+					<option value="SHIN">Shinola</option>
+					<option value="SHOH">Shoshanna</option>
+					<option value="SIEN">Siena</option>
+					<option value="SMPR">Simone Perele</option>
+					<option value="SPHU">Simple Human</option>
+					<option value="SLPR">Sisley Paris</option>
+					<option value="SKII">SKII</option>
+					<option value="XSKN">Skin</option>
+					<option value="STJN">St John</option>
+					<option value="STAU">Staud</option>
+					<option value="STEL">Stella McCartney</option>
+					<option value="STDW">Stephen Dweck</option>
+					<option value="STIS">Stone Island</option>
+					<option value="STUW">Stuart Weitzman</option>
+					<option value="SUNR">Sunday Riley</option>
+					<option value="SRTT">Surratt</option>
+					<option value="SZKA">Suzanne Kalan</option>
+					<option value="EVAN">Sydney Evan</option>
+					<option value="XXT3">T3</option>
+					<option value="TCOM">Tamara Comolli</option>
+					<option value="TATA">Tata Harper</option>
+					<option value="TBKR">Ted Baker London</option>
+					<option value="TERZ">TEREZ</option>
+					<option value="BRGL">The Brow Gal</option>
+					<option value="THRM">THE HARMONIST</option>
+					<option value="TROW">The Row</option>
+					<option value="THRY">Theory</option>
+					<option value="TCCN">TOCCIN</option>
+					<option value="TODS">Tods</option>
+					<option value="FORD">Tom Ford</option>
+					<option value="TBUR">Tory Burch</option>
+					<option value="TSPR">Tory Sport</option>
+					<option value="TURK">Trina Turk</option>
+					<option value="UGGS">UGG</option>
+					<option value="UMAO">Uma Oils</option>
+					<option value="VLTN">Valentino</option>
+					<option value="VCLA">Van Cleef & Arples</option>
+					<option value="VRLY">Varley</option>
+					<option value="VRBD">Veronica Beard</option>
+					<option value="VRSC">Versace</option>
+					<option value="VCBK">Victoria Beckham</option>
+					<option value="VINC">Vince</option>
+					<option value="VGUE">Vogue</option>
+					<option value="WNDL">Wandler</option>
+					<option value="WDST">William D Scott</option>
+					<option value="ZIIP">ZIIP Beauty</option>
+					<option value="ZIMM">ZIMMERMAN</option>
+				</select>
+			</div>
+			<div class="col">
+				<label class="form-label" for="categories">Categories (4 max):</label>
+				<select class="form-control" id="categories" multiple>
+					<option value="AC">Accessories</option>
+					<option value="AP">Women's Apparel</option>
+					<option value="AX">Active</option>
+					<option value="BE">Beauty</option>
+					<option value="CR">Cashmere</option>
+					<option value="CP">Contemporary</option>
+					<option value="DA">Dresses</option>
+					<option value="EV">Evening</option>
+					<option value="FA">Fine Apparel</option>
+					<option value="GT">Gifts</option>
+					<option value="HB">Handbags</option>
+					<option value="HM">Home</option>
+					<option value="IT">Intimates</option>
+					<option value="JW">Jewelry</option>
+					<option value="KD">Kids</option>
+					<option value="ME">Men's Clothing</option>
+					<option value="OW">Outerwear</option>
+					<option value="SH">Shoes</option>
+					<option value="SN">Sneakers</option>
+					<option value="SL">Sale</option>
+					<option value="ST">Stores</option>
+					<option value="SW">Swim</option>
+					<option value="SE">Services</option>
+					<option value="BE">Bed</option>
+					<option value="BT">Bath</option>
+					<option value="WT">Windows/Curtains</option>
+					<option value="DC">Decor</option>
+					<option value="EP">Gourmet/Epicure</option>
+					<option value="FR">Furniture</option>
+					<option value="LT">Lighting</option>
+					<option value="TL">Travel</option>
+					<option value="OT">Outdoor</option>
+					<option value="RG">Rugs</option>
+					<option value="TB">Tabletop</option>
+					<option value="CD">Comforters/Duvets</option>
+					<option value="QC">Quilts/Coverlets</option>
+					<option value="TP">Tops</option>
+					<option value="LS">Lounge/Sleepwear</option>
+					<option value="WD">Wedding</option>
+					<option value="EB">Emerging Brands</option>
+					<option value="NA">New Arrivals</option>
+					<option value="VA">Vacation</option>
+					<option value="SA">Sandals</option>
+					<option value="ER">Earrings</option>
+					<option value="CB">Crossbody Bags</option>
+					<option value="SJ">Stacked Jewelry</option>
+					<option value="CS">Casual</option>
+					<option value="PD">Premier Designer</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<label class="form-label" for="name">Campaign Name:</label>
+				<input class="form-control" id="name" type="text" autocomplete="off">
+			</div>
+			<div class="col">
+				<label class="form-label" for="date">Campaign Date:</label>
+				<input class="form-control" id="date" type="text" autocomplete="off">
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/selectize.min.js"></script>
+	<script src="js/bootstrap-datepicker.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
