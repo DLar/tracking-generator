@@ -93,7 +93,7 @@ function setCode() {
     
     temp = $("#name").val();
     if (temp) {
-        cid += "_" + temp.replace(/[^0-9a-z]/gi,'');
+        cid += "_" + temp.replace(/[^0-9a-z_]/gi,'');
     }
 
     temp = $("#date").val();
