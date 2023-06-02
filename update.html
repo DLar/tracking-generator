@@ -20,9 +20,9 @@
 			<div class="col-12 col-md-6">
 				<label class="form-label" for="group1">Brand</label>
 				<select class="form-control" id="group1">
-						<option value="NM">Neiman Marcus (NM)</option>
-						<option value="HC">Horchow (HC)</option>
-						<option value="IN">InCircle (IN)</option>
+						<option value="NMEM">Neiman Marcus (NM)</option>
+						<option value="HCEM">Horchow (HC)</option>
+						<option value="INEM">InCircle (IN)</option>
 				</select>
 			</div>
 			<div class="col-12 col-md-6">
@@ -42,7 +42,7 @@
 			</div>
 			<div class="col-12 col-md-6">
 				<label class="form-label" for="group3">Vendor</label>
-				<select class="form-control" id="group3">
+				<select class="form-control" id="group1">
 						<option value="NA">None</option>
 						<option value="XX">Multiple</option>
 						<option value="AC">Acoustic</option>
@@ -63,39 +63,50 @@
 				</select>
 			</div>
 			<div class="col-12 col-md-6">
-				<label class="form-label" for="campaigns">Campaign Types (2 max):</label>
-				<select class="form-control" id="campaigns" multiple>
-					<optgroup label="Editorial">
-						<option value="FA">Fall</option>
-						<option value="HO">Holiday</option>
-						<option value="RS">Resort</option>
-						<option value="PH">Post-Holiday</option>
-						<option value="SP">Spring</option>
-						<option value="SU">Summer</option>
-						<option value="PF">Pre-Fall</option>
-					</optgroup>
-					<optgroup label="Promotional">
-						<option value="DO">Dollar Off ($Off)</option>
-						<option value="GC">Gift Card (TGC)</option>
-						<option value="GW">Gift with Purchase (GWP)</option>
-						<option value="SL">Hardmark (HM)</option>
-						<option value="PO">Percent Off Sale (POS)</option>
-						<option value="BP">Bonus Points (BP)</option>
-					</optgroup>
-					<optgroup label="Other">
-						<option value="OO">Co-Op</option>
-						<option value="EG">Evergreen</option>
-						<option value="TX">Transactional</option>
-						<option value="ET">Event Triggered</option>
-					</optgroup>
-					<optgroup label="Bergdorf Goodman">
-						<option value="DA">Download the App</option>
-						<option value="BA">Brand Awareness</option>
-						<option value="AB">Testing</option>
-						<option value="MD">Markdown</option>
-						<option value="ED">Editorial</option>
-						<option value="PR">Promotional</option>
-					</optgroup>
+				<label class="form-label" for="campaigns">Campaign Group</label>
+				<select class="form-control" id="campaigns">
+						<option value="0">None</option>
+						<option value="X">Multiple</option>
+						<option value="E">Editorial</option>
+						<option value="P">Promotional</option>
+						<option value="T">Transactional</option>
+						<option value="V">Event Triggered (ETE)</option>
+						<option value="O">Other</option>
+				</select>
+			</div>
+			<div class="col-12 col-md-6">
+				<label class="form-label" for="group2">Campaign Type</label>
+				<select class="form-control" id="group2">
+						<option value="0">None</option>
+						<option value="X">Multiple</option>
+						<option value="B">Bonus Points</option>
+						<option value="C">Co-Op</option>
+						<option value="D">Dollar Off</option>
+						<option value="E">Evergreen</option>
+						<option value="G">Gift Card</option>
+						<option value="W">GWP</option>
+						<option value="H">Hardmark</option>
+						<option value="I">InCircle - Awareness</option>
+						<option value="O">ODS</option>
+						<option value="P">POS</option>
+						<option value="Q">Quick Link</option>
+						<option value="S">Sale</option>
+				</select>
+			</div>
+			<div class="col-12 col-md-6">
+				<label class="form-label" for="group2">Placement</label>
+				<select class="form-control" id="group2">
+						<option value="0">None</option>
+						<option value="X">Multiple</option>
+						<option value="O">Other</option>
+						<option value="F">Footer</option>
+						<option value="H">Header</option>
+						<option value="B">Primary Block</option>
+						<option value="1">Supporting block 1</option>
+						<option value="2">Supporting block 2</option>
+						<option value="3">Supporting block 3</option>
+						<option value="4">Supporting block 3</option>
+						<option value="T">Top Block</option>	
 				</select>
 			</div>
 			<div class="col-12 col-md-6">
