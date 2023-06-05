@@ -68,12 +68,9 @@ function setCode() {
     temp = $("#season").val();
     cid += (temp ? temp : "XX") + "_";
 
-    temp = $("#group3").val();
-    for (i = 0; i < 2; i++) {
-        cid += temp[i] ? temp[i] : "XX";
-    }
-    cid += "_";
-
+    temp = $("#vendor").val();
+    cid += (temp ? temp : "XX") + "_";
+   
     temp = $("#campaigns").val();
     for (i = 0; i < 2; i++) {
         cid += temp[i] ? temp[i] : "XX";
