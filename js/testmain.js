@@ -10,7 +10,7 @@ $(document).ready(() => {
         for (let i = 0; i < groups.length; i++) {
             switch (i) {
             case 0:
-                $("#group3").val(groups[i].match(/.{1,2}/g));
+                $("#vendor").val(groups[i].match(/.{1,2}/g));
                 break;
             case 1:
                 $("#campaigns").val(groups[i].match(/.{1,2}/g));
@@ -34,8 +34,8 @@ $(document).ready(() => {
     }
     
     $("select, input").change(setCode);
-    $('#brand, #season, #group3').selectize();
-    $('#campaigns').selectize({ maxItems: 2 });
+    $('#brand, #season, #vendor, #campaigns').selectize();
+    $().selectize({ maxItems: 2 });
     $('#partners, #categories').selectize({ maxItems: 4 });
     $('#date').datepicker({ autoclose: true, todayHighlight: true, orientation: "bottom" });
     $('#code').click(function() {$(this).select();});
