@@ -3,8 +3,8 @@ $(document).ready(() => {
 
     if (id) {
         $("#code").val(id);
-        $("#group1").val(id.substring(0, 4));
-        $("#group2").val(id.substring(5, 7));
+        $("#brand").val(id.substring(0, 4));
+        $("#season").val(id.substring(5, 7));
         
         const groups = id.substring(8).split('_');
         for (let i = 0; i < groups.length; i++) {
@@ -34,7 +34,7 @@ $(document).ready(() => {
     }
     
     $("select, input").change(setCode);
-    $('#group1, #group2').selectize();
+    $('#brand, #season').selectize();
     $('#group3, #campaigns').selectize({ maxItems: 2 });
     $('#vendors, #categories').selectize({ maxItems: 4 });
     $('#date').datepicker({ autoclose: true, todayHighlight: true, orientation: "bottom" });
@@ -62,10 +62,10 @@ function getUrlParameter(sParam) {
 
 function setCode() {
     let i = 0;
-    let temp = $("#group1").val();
+    let temp = $("#brand").val();
     let cid = (temp ? temp : "XXXX") + "_";
 
-    temp = $("#group2").val();
+    temp = $("#season").val();
     cid += (temp ? temp : "XX") + "_";
 
     temp = $("#group3").val();
