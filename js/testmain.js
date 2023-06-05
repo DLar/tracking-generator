@@ -16,7 +16,7 @@ $(document).ready(() => {
                 $("#campaigns").val(groups[i].match(/.{1,2}/g));
                 break;
             case 2:
-                $("#vendors").val(groups[i].match(/.{1,4}/g));
+                $("#partners").val(groups[i].match(/.{1,4}/g));
                 break;
             case 3:
                 $("#categories").val(groups[i].match(/.{1,2}/g));
@@ -34,9 +34,9 @@ $(document).ready(() => {
     }
     
     $("select, input").change(setCode);
-    $('#brand, #season, #vendors').selectize();
-    $('#group3, #campaigns').selectize({ maxItems: 2 });
-    $('#categories').selectize({ maxItems: 4 });
+    $('#brand, #season, #group3').selectize();
+    $('#campaigns').selectize({ maxItems: 2 });
+    $('#partners, #categories').selectize({ maxItems: 4 });
     $('#date').datepicker({ autoclose: true, todayHighlight: true, orientation: "bottom" });
     $('#code').click(function() {$(this).select();});
     $('#copy').click(function() {
@@ -80,9 +80,9 @@ function setCode() {
     }
     cid += "_";
 
-    temp = $("#vendors").val();
-    for (i = 0; i < 2; i++) {
-        cid += temp[i] ? temp[i] : "XX";
+    temp = $("#partners").val();
+    for (i = 0; i < 4; i++) {
+        cid += temp[i] ? temp[i] : "XXXX";
     }
     cid += "_";
 
