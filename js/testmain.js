@@ -34,9 +34,9 @@ $(document).ready(() => {
     }
     
     $("select, input").change(setCode);
-    $('#brand, #season').selectize();
+    $('#brand, #season, #vendors').selectize();
     $('#group3, #campaigns').selectize({ maxItems: 2 });
-    $('#vendors, #categories').selectize({ maxItems: 4 });
+    $('#categories').selectize({ maxItems: 4 });
     $('#date').datepicker({ autoclose: true, todayHighlight: true, orientation: "bottom" });
     $('#code').click(function() {$(this).select();});
     $('#copy').click(function() {
@@ -81,8 +81,8 @@ function setCode() {
     cid += "_";
 
     temp = $("#vendors").val();
-    for (i = 0; i < 4; i++) {
-        cid += temp[i] ? temp[i] : "XXXX";
+    for (i = 0; i < 2; i++) {
+        cid += temp[i] ? temp[i] : "XX";
     }
     cid += "_";
 
