@@ -70,12 +70,12 @@ function setCode() {
 
     temp = $("#vendor").val();
     cid += (temp ? temp : "XX") + "_";
-   
+    
     temp = $("#campaigns").val();
-    for (i = 0; i < 2; i++) {
-        cid += temp[i] ? temp[i] : "XX";
-    }
-    cid += "_";
+    cid += (temp ? temp : "X") ;
+    
+    temp = $("#group4").val();
+    cid += (temp ? temp : "X") + "_";
 
     temp = $("#partners").val();
     for (i = 0; i < 4; i++) {
