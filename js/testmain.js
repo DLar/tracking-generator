@@ -34,9 +34,9 @@ $(document).ready(() => {
     }
     
     $("select, input").change(setCode);
-    $('#brand, #season, #vendor, #campaigns, #type, #placement, #version, #number').selectize();
+    $('#brand, #season, #vendor, #campaigns, #type, #placement, #version, #number, #objective, #audience').selectize();
     $().selectize({ maxItems: 2 });
-    $('#partners, #categories').selectize({ maxItems: 4 });
+    $('#partners, #categories, #categories2').selectize({ maxItems: 4 });
     $('#date').datepicker({ autoclose: true, todayHighlight: true, orientation: "bottom" });
     $('#code').click(function() {$(this).select();});
     $('#copy').click(function() {
@@ -86,16 +86,29 @@ function setCode() {
     temp = $("#number").val();
     cid += (temp ? temp : "X") + "_";
     
-    temp = $("#sdfsdfsdfsdfa").val();
+    temp = $("#partners").val();
     for (i = 0; i < 4; i++) {
         cid += temp[i] ? temp[i] : "XXXX";
     }
     cid += "_";
 
     temp = $("#categories").val();
-    for (i = 0; i < 4; i++) {
+    for (i = 0; i < 3; i++) {
         cid += temp[i] ? temp[i] : "XX";
     }
+    cid += "_";
+    
+     temp = $("#categories2").val();
+    for (i = 0; i < 3; i++) {
+        cid += temp[i] ? temp[i] : "XX";
+    }
+     cid += "_";
+    
+    temp = $("#objective").val();
+    cid += (temp ? temp : "XX") + "_";
+    
+    temp = $("#audience").val();
+    cid += (temp ? temp : "XX") + "_";
     
     temp = $("#name").val();
     if (temp) {
@@ -105,6 +118,11 @@ function setCode() {
     temp = $("#date").val();
     if (temp) {
         cid += "_" + temp.substring(0, 2) + temp.substring(3, 5) + temp.substring(8);
+    } 
+    
+     temp = $("#uid").val();
+    if (temp) {
+        cid += "_" + temp.replace(/[^0-9a-z_]/gi,'');
     }
     
     $("#code").val(cid);
