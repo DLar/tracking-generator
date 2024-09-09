@@ -89,7 +89,7 @@ function setCode() {
     cid += (temp ? temp : "XX") + "_";
 	
 	temp = $("#partners").val();
-    cid += (temp ? temp : "XXXX") + "_";
+    cid += (temp ? temp : "XXXX");
     
      temp = $("#uid").val();
     if (temp) {
