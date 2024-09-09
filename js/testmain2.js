@@ -64,9 +64,6 @@ function setCode() {
     let temp = $("#brand").val();
     let cid = (temp ? temp : "XXXX") + "_";
 
-    temp = $("#season").val();
-    cid += (temp ? temp : "XX") + "_";
-
     temp = $("#vendor").val();
     cid += (temp ? temp : "XX") + "_";
     
@@ -80,44 +77,23 @@ function setCode() {
     cid += (temp ? temp : "XX") + "_";
     
     temp = $("#version").val();
-    cid += (temp ? temp : "XX") ;
-    
-    temp = $("#number").val();
-    cid += (temp ? temp : "X") + "_";
-    
-    temp = $("#partners").val();
-    for (i = 0; i < 4; i++) {
-        cid += temp[i] ? temp[i] : "XXXX";
-    }
-    cid += "_";
-
-    temp = $("#categories").val();
-    for (i = 0; i < 3; i++) {
-        cid += temp[i] ? temp[i] : "XX";
-    }
-    cid += "_";
-    
-     temp = $("#categories2").val();
-    for (i = 0; i < 3; i++) {
-        cid += temp[i] ? temp[i] : "XX";
-    }
-     cid += "_";
-    
-    temp = $("#objective").val();
+    cid += (temp ? temp : "XX") + "_";
+	
+	temp = $("#objective").val();
     cid += (temp ? temp : "XX") + "_";
     
-    temp = $("#audience").val();
-    cid += (temp ? temp : "XXXX") ;
+	temp = $("#audience").val();
+    cid += (temp ? temp : "XXXX") + "_";
+	
+	temp = $("#categories").val();
+    cid += (temp ? temp : "XX") + "_";
+	
+    temp = $("#number").val();
+    cid += (temp ? temp : "X") + "_";
+	
+	temp = $("#partners").val();
+    cid += (temp ? temp : "XXXX") + "_";
     
-    temp = $("#name").val();
-    if (temp) {
-        cid += "_" + temp.replace(/[^0-9a-z_]/gi,'');
-    }
-
-    temp = $("#date").val();
-    if (temp) {
-        cid += "_" + temp.substring(0, 2) + temp.substring(3, 5) + temp.substring(8);
-    } 
     
      temp = $("#uid").val();
     if (temp) {
