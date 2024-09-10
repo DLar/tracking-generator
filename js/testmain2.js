@@ -34,8 +34,7 @@ $(document).ready(() => {
     }
     
     $("select, input").change(setCode);
-    $('#brand, #season, #vendor, #campaigns, #type, #placement, #version, #objective, #audience, #partners, #categories, #categories2').selectize();
-    $('').selectize({ maxItems: 4 });
+    $('#brand, #season, #vendor, #campaigns, #type, #placement, #version, #objective, #audience, #partners, #categories, #categories2, #uid').selectize();
     $('#date').datepicker({ autoclose: true, todayHighlight: true, orientation: "bottom" });
     $('#code').click(function() {$(this).select();});
     $('#copy').click(function() {
@@ -90,10 +89,10 @@ function setCode() {
 	
 	temp = $("#partners").val();
     cid += (temp ? temp : "XXXX");
+	
+	temp = $("#uid").val();
+    cid += "_" + (temp ? temp : "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
     
-     temp = $("#uid").val();
-    if (temp) {
-        cid += "_" + temp.replace(/[^0-9a-z_]/gi,'');
     }
     
     $("#code").val(cid);
