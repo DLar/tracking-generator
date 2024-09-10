@@ -1068,7 +1068,10 @@
 			
 			<div class="col-12 col-md-6">
 				<label class="form-label" for="uid">Unique ID</label>
-				<input class="form-control" id="uid" type="text" autocomplete="off">
+				<select class="form-control" id="uid">
+					<option value="${CampaignID}">Epsilon Dynamic Campaign ID</option>
+					<option value="{{nqe.subaction|replace('subaction_','')}}">BlueCode Dynamic Campaign ID </option>
+				</select>	
 			</div>
 		</div>
 	</div>
