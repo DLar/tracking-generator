@@ -34,7 +34,7 @@ $(document).ready(() => {
     }
     
     $("select, input").change(setCode);
-    $('#brand, #season, #vendor, #campaigns, #type, #placement, #version, #objective, #audience, #partners, #categories, #categories2').selectize();
+    $('#brand, #season, #vendor, #campaigns, #type, #placement, #version, #objective, #audience, #partners, #categories, #categories2, #campaignid').selectize();
     $('#date').datepicker({ autoclose: true, todayHighlight: true, orientation: "bottom" });
     $('#code').click(function() {$(this).select();});
     $('#copy').click(function() {
