@@ -34,7 +34,7 @@ $(document).ready(() => {
     }
     
     $("select, input").change(setCode);
-    $('#brand, #season, #vendor, #campaigns, #type, #placement, #version, #objective, #audience, #partners, #categories, #categories2, #campaignid').selectize();
+    $('#brand, #season, #vendor, #campaigns, #type, #placement, #version, #objective, #audience, #partners, #categories, #categories2').selectize();
     $('#date').datepicker({ autoclose: true, todayHighlight: true, orientation: "bottom" });
     $('#code').click(function() {$(this).select();});
     $('#copy').click(function() {
@@ -88,10 +88,7 @@ function setCode() {
     cid += (temp ? temp : "XX") + "_";
 	
 	temp = $("#partners").val();
-    cid += (temp ? temp : "XXXX") + "_";
-	
-	temp = $("#campaignid").val();
-    cid += (temp ? temp :);
+    cid += (temp ? temp : "XXXX");
     
     temp = $("#uid").val();
     if (temp) {
